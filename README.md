@@ -17,7 +17,7 @@ Run the oak server:
 ./oak
 ```
 
-Then navigate to http://127.0.0.1:23517/console.html
+Then navigate to http://127.0.0.1:23517/console
 
 Finally, start sending ray data using the PHP `ray()` function
 
