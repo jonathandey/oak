@@ -2,12 +2,14 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Hello world</title>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	<title>Oak Browser</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/tailwind.min.css">
+	<script src="assets/js/vue2.min.js"></script>
 </head>
-<body>
+<body class="p-10">
 	<div id="app">
-		<div v-for="debug in debugs.slice().reverse()" :key="debug.uuid">
+		<div v-if="!debugs.length">Nothing yet...</div>
+		<div v-for="debug in debugs.slice().reverse()" :key="debug.uuid" class="mb-10">
 			<div v-for="payload in debug.payloads">
 				<div v-for="value in payload.content.values" v-html="value"></div>
 			</div>
