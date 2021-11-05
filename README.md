@@ -4,6 +4,8 @@ An alternative to the [ray app](https://myray.app/), written in [Crystal](https:
 
 ## Installation
 
+First, ensure you have [Crystal installed](https://crystal-lang.org/install/)
+
 ```
 git clone https://github.com/jonathandey/oak
 export KEMAL_ENV=production
