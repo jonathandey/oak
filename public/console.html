@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hello world</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div v-for="debug in debugs.slice().reverse()" :key="debug.uuid">
+			<div v-for="payload in debug.payloads">
+				<div v-for="value in payload.content.values" v-html="value"></div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var app = new Vue({
+			el: '#app',
+			data: {
+				debugs: []
+			},
+
+			methods: {
+				debug: function(data) {
+					this.debugs.push(data)
+				}
+			}
+		})		
+
+		var exampleSocket = new WebSocket("ws://127.0.0.1:23517")
+		exampleSocket.onmessage = function (event) {
+			app.debug(JSON.parse(event.data))
+		}		
+	</script>
+</body>
+</html>

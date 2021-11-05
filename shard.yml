@@ -1,0 +1,19 @@
+name: sshit
+version: 0.1.0
+
+authors:
+  - Jonathan Dey <jon@trenttech.co.uk>
+
+targets:
+  sshit:
+    main: src/sshit.cr
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+  tallboy:
+    github: epoch/tallboy
+
+crystal: 1.2.1
+
+license: MIT
