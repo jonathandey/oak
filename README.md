@@ -8,6 +8,7 @@ First, ensure you have [Crystal installed](https://crystal-lang.org/install/)
 
 ```
 git clone https://github.com/jonathandey/oak
+shards install
 export KEMAL_ENV=production
 crystal build -o ./oak --release src/oak.cr
 ```
