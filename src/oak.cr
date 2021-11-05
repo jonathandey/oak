@@ -1,7 +1,6 @@
 require "json"
 require "time"
 require "kemal"
-require "tallboy"
 
 data_rows = Array(Array(Time | String)).new
 sockets = Hash(UInt64, HTTP::WebSocket).new
@@ -27,6 +26,8 @@ module Oak
     uuid = env.params.json["uuid"]
     payloads = env.params.json["payloads"]
 
+    Log.info { "New payload. UUID: #{uuid}" }
+
     sockets.each do |hash, socket|
       unless socket.closed?
         socket.send(env.params.json.to_json.to_s)
@@ -37,8 +38,16 @@ module Oak
   end
 
   ws "/" do |socket|
-    puts socket.hash
-    sockets[socket.hash] = socket
+    socket_hash = socket.hash
+    Log.info { "New connection. Socket hash: #{socket_hash}" }
+
+    socket.on_close do |_|
+      Log.info { "Closed connection. Socket hash: #{socket_hash}" }
+
+      sockets.delete(socket_hash)
+    end
+
+    sockets[socket_hash] = socket
   end
 
   Kemal.run(23517)
