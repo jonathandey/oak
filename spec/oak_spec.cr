@@ -1,6 +1,6 @@
 require "./spec_helper"
 
-describe Sshit do
+describe Oak do
   # TODO: Write tests
 
   it "works" do

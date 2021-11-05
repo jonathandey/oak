@@ -1,2 +1,2 @@
 require "spec"
-require "../src/sshit"
+require "../src/oak"

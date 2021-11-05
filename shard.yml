@@ -1,18 +1,16 @@
-name: sshit
+name: oak
 version: 0.1.0
 
 authors:
-  - Jonathan Dey <jon@trenttech.co.uk>
+  - Jonathan Dey <jon@dey.dev>
 
 targets:
-  sshit:
-    main: src/sshit.cr
+  oak:
+    main: src/oak.cr
 
 dependencies:
   kemal:
     github: kemalcr/kemal
-  tallboy:
-    github: epoch/tallboy
 
 crystal: 1.2.1
 

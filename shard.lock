@@ -20,7 +20,3 @@ shards:
     git: https://github.com/luislavena/radix.git
     version: 0.4.1
 
-  tallboy:
-    git: https://github.com/epoch/tallboy.git
-    version: 0.9.3
-

@@ -7,7 +7,7 @@ data_rows = Array(Array(Time | String)).new
 sockets = Hash(UInt64, HTTP::WebSocket).new
 
 # TODO: Write documentation for `Sshit`
-module Sshit
+module Oak
   VERSION = "0.1.0"
 
   # TODO: Put your code here

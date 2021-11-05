@@ -4,11 +4,19 @@ TODO: Write a description here
 
 ## Installation
 
-TODO: Write installation instructions here
+```
+git clone https://github.com/jonathandey/oak
+export KEMAL_ENV=production
+crystal build -o ./oak --release src/oak.cr
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+./oak
+```
+
+Then navigate to http://127.0.0.1:23517/console.html
 
 ## Development
 
