@@ -6,6 +6,8 @@ require "tallboy"
 data_rows = Array(Array(Time | String)).new
 sockets = Hash(UInt64, HTTP::WebSocket).new
 
+server_port = "23517"
+
 # TODO: Write documentation for `Sshit`
 module Oak
   VERSION = "0.1.0"
@@ -13,6 +15,12 @@ module Oak
   # TODO: Put your code here
   get "/" do |env|
     "ok"
+  end
+
+  get "/console" do
+    ip = "127.0.0.1"
+    port = server_port
+    render "src/views/console.ecr"
   end
 
   post "/" do |env|

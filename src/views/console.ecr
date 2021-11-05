@@ -3,8 +3,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Oak Browser</title>
-	<link rel="stylesheet" type="text/css" href="assets/css/tailwind.min.css">
-	<script src="assets/js/vue2.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/assets/css/tailwind.min.css">
+	<script src="/assets/js/vue2.min.js"></script>
 </head>
 <body class="p-10">
 	<div id="app">
@@ -30,7 +30,7 @@
 			}
 		})		
 
-		var exampleSocket = new WebSocket("ws://127.0.0.1:23517")
+		var exampleSocket = new WebSocket("ws://<%= ip %>:<%= port %>")
 		exampleSocket.onmessage = function (event) {
 			app.debug(JSON.parse(event.data))
 		}		
